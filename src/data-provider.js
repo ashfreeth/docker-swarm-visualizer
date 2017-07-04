@@ -173,6 +173,7 @@ updateNodes = (nodes) => {
           if(name.length>0) {
             currentnode.Description.Hostname = name ;
             currentnode.name = name+" <br/> "+ node.Spec.Role+
+            " <br/>"+node.Description.Platform.OS+" "+node.Description.Platform.Architecture+
             " <br/>"+(currentnode.Description.Resources.MemoryBytes/1024/1024/1024).toFixed(3)+"G RAM <br/>";
             for (var key in node.Spec.Labels) {
               if(node.Spec.Labels[key].length>0){
